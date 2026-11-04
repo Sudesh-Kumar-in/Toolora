@@ -11,7 +11,7 @@ export async function loadPdfJs(): Promise<PdfJsLib & { GlobalWorkerOptions: { w
     GlobalWorkerOptions: { workerSrc: string };
   };
   if (!pdfjs.GlobalWorkerOptions.workerSrc) {
-    pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
+    pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
   }
   return pdfjs;
 }
