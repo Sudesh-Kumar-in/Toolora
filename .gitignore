@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+.env*.local
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local verification report
+VERIFICATION-REPORT.md
