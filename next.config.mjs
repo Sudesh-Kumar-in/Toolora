@@ -1,9 +1,21 @@
 /** @type {import('next').NextConfig} */
+import path from "node:path";
+
 const nextConfig = {
   reactStrictMode: true,
-  // qpdf (encryption) and the background remover ship WebAssembly modules.
   webpack: (config) => {
-    config.experiments = { ...(config.experiments ?? {}), asyncWebAssembly: true };
+    config.experiments = {
+      ...(config.experiments ?? {}),
+      asyncWebAssembly: true,
+    };
+
+    config.resolve.alias = {
+      ...(config.resolve.alias ?? {}),
+      "onnxruntime-web$": path.resolve(
+        "node_modules/onnxruntime-web/dist/ort.bundle.min.mjs"
+      ),
+    };
+
     return config;
   },
 };
