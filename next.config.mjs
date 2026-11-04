@@ -14,6 +14,9 @@ const nextConfig = {
       "onnxruntime-web$": path.resolve(
         "node_modules/onnxruntime-web/dist/ort.bundle.min.mjs"
       ),
+      "onnxruntime-web/webgpu$": path.resolve(
+        "node_modules/onnxruntime-web/dist/ort.wasm.bundle.min.mjs"
+      ),
     };
 
     return config;
